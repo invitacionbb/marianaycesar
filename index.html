@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Mariana & César | Nuestra Boda</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header class="hero">
+    <div class="hero-frame"></div>
+
+    <div class="hero-content">
+      <p class="hero-kicker">Nuestra boda</p>
+
+      <img
+        src="img/hero-title.png"
+        alt="Mariana y César"
+        class="hero-title-image"
+      />
+
+      <p class="hero-date">1 Agosto 2026</p>
+
+      <a href="#intro" class="primary-button">Ver invitación</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="intro" class="intro-quote">
+      <div class="intro-quote-content">
+        <img
+          src="img/frase-cien-anos.png"
+          alt="Y si cien años vivo, cien años pienso en ti"
+          class="quote-image"
+        />
+
+        <img
+          src="img/flores-intro.png"
+          alt=""
+          class="flowers-divider"
+        />
+
+        <div class="audio-player">
+          <p class="audio-kicker">Música para este momento</p>
+
+          <button class="audio-play-button" id="audioPlayButton" type="button">
+            <span class="audio-icon">♫</span>
+            <span class="audio-text">Reproducir música</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="wedding-intro-section reveal">
+      <div class="wedding-intro-content">
+        <img
+          src="img/wedding-intro-01.png"
+          alt="Mariana Daniela y César Rafael nos casamos"
+          class="wedding-intro-image wedding-intro-image-top"
+        />
+
+        <img
+          src="img/wedding-intro-02.png"
+          alt="Padres, padrinos e invitación al enlace matrimonial"
+          class="wedding-intro-image wedding-intro-image-bottom"
+        />
+      </div>
+    </section>
+
+    <section class="event-date-section reveal">
+      <div class="event-date-content">
+        <img
+          src="img/event-date-title.png"
+          alt="Sábado 01 Agosto 2026"
+          class="event-date-image"
+        />
+      </div>
+    </section>
+
+    <section class="gallery-section reveal">
+      <div class="gallery-content">
+        <div class="gallery-slider" id="gallerySlider">
+          <div class="gallery-track" id="galleryTrack">
+            <div class="gallery-slide">
+              <img src="img/galeria-01.jpeg" alt="Mariana y César foto 1" />
+            </div>
+
+            <div class="gallery-slide">
+              <img src="img/galeria-02.jpeg" alt="Mariana y César foto 2" />
+            </div>
+
+            <div class="gallery-slide">
+              <img src="img/galeria-03.jpeg" alt="Mariana y César foto 3" />
+            </div>
+
+            <div class="gallery-slide">
+              <img src="img/galeria-04.jpeg" alt="Mariana y César foto 4" />
+            </div>
+
+            <div class="gallery-slide">
+              <img src="img/galeria-05.jpeg" alt="Mariana y César foto 5" />
+            </div>
+
+            <div class="gallery-slide">
+              <img src="img/galeria-06.jpeg" alt="Mariana y César foto 6" />
+            </div>
+
+            <div class="gallery-slide">
+              <img src="img/galeria-07.jpeg" alt="Mariana y César foto 7" />
+            </div>
+
+            <div class="gallery-slide">
+              <img src="img/galeria-08.jpeg" alt="Mariana y César foto 8" />
+            </div>
+
+            <div class="gallery-slide">
+              <img src="img/galeria-09.jpeg" alt="Mariana y César foto 9" />
+            </div>
+
+            <div class="gallery-slide">
+              <img src="img/galeria-10.jpeg" alt="Mariana y César foto 10" />
+            </div>
+
+            <div class="gallery-slide">
+              <img src="img/galeria-11.jpeg" alt="Mariana y César foto 11" />
+            </div>
+
+            <div class="gallery-slide">
+              <img src="img/galeria-12.jpeg" alt="Mariana y César foto 12" />
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-dots" id="galleryDots">
+          <button class="gallery-dot is-active" type="button" aria-label="Foto 1"></button>
+          <button class="gallery-dot" type="button" aria-label="Foto 2"></button>
+          <button class="gallery-dot" type="button" aria-label="Foto 3"></button>
+          <button class="gallery-dot" type="button" aria-label="Foto 4"></button>
+          <button class="gallery-dot" type="button" aria-label="Foto 5"></button>
+          <button class="gallery-dot" type="button" aria-label="Foto 6"></button>
+          <button class="gallery-dot" type="button" aria-label="Foto 7"></button>
+          <button class="gallery-dot" type="button" aria-label="Foto 8"></button>
+          <button class="gallery-dot" type="button" aria-label="Foto 9"></button>
+          <button class="gallery-dot" type="button" aria-label="Foto 10"></button>
+          <button class="gallery-dot" type="button" aria-label="Foto 11"></button>
+          <button class="gallery-dot" type="button" aria-label="Foto 12"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section countdown-section reveal">
+      <p class="section-kicker">Faltan</p>
+      <h2>Cuenta regresiva</h2>
+
+      <div class="countdown" id="countdown">
+        <div class="countdown-item">
+          <span id="days">00</span>
+          <small>Días</small>
+        </div>
+
+        <div class="countdown-item">
+          <span id="hours">00</span>
+          <small>Horas</small>
+        </div>
+
+        <div class="countdown-item">
+          <span id="minutes">00</span>
+          <small>Minutos</small>
+        </div>
+
+        <div class="countdown-item">
+          <span id="seconds">00</span>
+          <small>Segundos</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="dress-code-section reveal">
+      <div class="image-section-content">
+        <img
+          src="img/dresscode-title.png"
+          alt="Dress code"
+          class="full-section-image dress-code-image"
+        />
+      </div>
+    </section>
+
+    <section class="ceremony-section reveal">
+      <div class="image-section-content">
+        <img
+          src="img/ceremonia-title.png"
+          alt="Ceremonia religiosa"
+          class="full-section-image location-image"
+        />
+
+        <a
+          href="https://maps.app.goo.gl/VNfNkFBXJdyZwWmp9"
+          class="location-button"
+          target="_blank"
+          rel="noopener"
+        >
+          Haz click aquí para ver la UBICACIÓN
+        </a>
+      </div>
+    </section>
+
+    <section class="reception-section reveal">
+      <div class="image-section-content">
+        <img
+          src="img/recepcion-title.png"
+          alt="Recepción"
+          class="full-section-image location-image"
+        />
+
+        <a
+          href="https://maps.app.goo.gl/Q6uPBMY8tHxCARZW8"
+          class="location-button"
+          target="_blank"
+          rel="noopener"
+        >
+          Haz click aquí para ver la UBICACIÓN
+        </a>
+      </div>
+    </section>
+
+    <section class="program-section reveal">
+      <div class="image-section-content">
+        <img
+          src="img/programa-title.png"
+          alt="Programa"
+          class="full-section-image program-image"
+        />
+      </div>
+    </section>
+
+    <section class="gifts-section reveal">
+      <div class="image-section-content">
+        <img
+          src="img/regalos-title.png"
+          alt="Mesa de regalos"
+          class="full-section-image gifts-title-image"
+        />
+
+        <a
+          href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/51970502"
+          class="gift-list-button"
+          target="_blank"
+          rel="noopener"
+        >
+          Haz click aquí
+        </a>
+
+        <div class="bank-card">
+          <img
+            src="img/cuenta-title.png"
+            alt="Datos de cuenta"
+            class="bank-title-image"
+          />
+
+          <div class="bank-data">
+            <p class="bank-label">CLABE</p>
+
+            <div class="copy-row">
+              <span id="clabeNumber">012 1900 1524 2782 477</span>
+
+              <button
+                class="copy-button"
+                type="button"
+                onclick="navigator.clipboard.writeText('012190015242782477')"
+              >
+                Copiar
+              </button>
+            </div>
+
+            <p class="bank-label">Tarjeta</p>
+
+            <div class="copy-row">
+              <span id="cardNumber">4152 3144 7580 8138</span>
+
+              <button
+                class="copy-button"
+                type="button"
+                onclick="navigator.clipboard.writeText('4152314475808138')"
+              >
+                Copiar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="attendance-section reveal">
+      <div class="image-section-content">
+        <img
+          src="img/asistencia-title.png"
+          alt="Confirmación de asistencia"
+          class="full-section-image attendance-image"
+        />
+
+        <a
+          href="https://wa.me/+526183641676"
+          class="attendance-button"
+          target="_blank"
+          rel="noopener"
+        >
+          Haz click aquí
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-section">
+    <div class="footer-content">
+      <p>
+        Desarrollado por Blueberry Digital / Whatsapp: 618 210 3942 / correo
+        electrónico: luisblueberry@gmail.com / Durango, México.
+      </p>
+
+      <div class="footer-actions">
+        <a
+          href="https://wa.me/526182103942"
+          class="footer-button"
+          target="_blank"
+          rel="noopener"
+        >
+          WhatsApp
+        </a>
+
+        <a
+          href="mailto:luisblueberry@gmail.com"
+          class="footer-button"
+        >
+          Email
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="music-button" id="musicButton" aria-label="Activar música">
+    ♫
+  </button>
+
+  <audio id="backgroundMusic" loop preload="auto">
+    <source src="audio/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="js/countdown.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

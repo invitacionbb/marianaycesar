@@ -1,0 +1,1035 @@
+:root {
+  --color-background: #f8e8d8;
+  --color-background-soft: #fffaf6;
+  --color-text: #2f2a26;
+  --color-muted: #7a6f66;
+  --color-accent: #b08a63;
+  --color-accent-dark: #8b6847;
+  --color-title: #4b4428;
+  --color-white: #ffffff;
+  --color-pink-paper: #e7a2b2;
+  --color-audio-background: #f8e8d8;
+  --color-audio-button: #d8d8d8;
+  --color-audio-button-dark: #b8b8b8;
+
+  --font-title: "Cormorant Garamond", serif;
+  --font-body: "Montserrat", sans-serif;
+
+  --shadow-soft: 0 18px 45px rgba(47, 42, 38, 0.12);
+
+  --radius-large: 28px;
+  --radius-medium: 18px;
+}
+
+/* Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 32px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  overflow: hidden;
+
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)),
+    url("../img/hero-background.png");
+
+  background-size: 100% 100%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+
+.hero-frame {
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(75, 68, 40, 0.22);
+  border-radius: 32px;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  color: var(--color-title);
+  animation: fade-up 1.2s ease both;
+}
+
+.hero-kicker,
+.section-kicker {
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+.hero-kicker {
+  color: var(--color-title);
+}
+
+.hero-title-image {
+  display: block;
+  width: min(86vw, 620px);
+  margin: 0 auto 26px;
+  filter: drop-shadow(0 10px 22px rgba(75, 68, 40, 0.12));
+}
+
+.hero-date {
+  font-size: 0.9rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 34px;
+  color: var(--color-title);
+  font-weight: 500;
+}
+
+/* Buttons */
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 50px;
+  padding: 14px 28px;
+
+  border-radius: 999px;
+
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.primary-button {
+  background: var(--color-accent);
+  color: var(--color-white);
+  box-shadow: 0 12px 28px rgba(176, 138, 99, 0.35);
+}
+
+.primary-button:hover {
+  transform: translateY(-3px);
+  background: var(--color-accent-dark);
+  box-shadow: 0 18px 36px rgba(176, 138, 99, 0.42);
+}
+
+.secondary-button {
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent-dark);
+  margin-top: 18px;
+}
+
+.secondary-button:hover {
+  transform: translateY(-3px);
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* Main */
+main {
+  background: var(--color-background);
+}
+
+/* Intro quote */
+.intro-quote {
+  position: relative;
+  padding: 72px 0 0;
+
+  display: block;
+  overflow: hidden;
+
+  background-color: var(--color-pink-paper);
+  background-image: url("../img/fondo-rosa.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.intro-quote-content {
+  width: 100%;
+  text-align: center;
+}
+
+.quote-image {
+  width: min(82%, 650px);
+  display: block;
+  margin: 0 auto 0;
+  padding: 0;
+}
+
+.flowers-divider {
+  width: 100%;
+  display: block;
+  margin: -6px 0 0;
+  padding: 0;
+}
+
+/* Audio player */
+.audio-player {
+  width: 100%;
+  padding: 30px 24px 42px;
+  text-align: center;
+
+  background-color: var(--color-audio-background);
+}
+
+.audio-kicker {
+  margin-bottom: 14px;
+
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  color: var(--color-title);
+}
+
+.audio-play-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 46px;
+  padding: 12px 26px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: var(--color-audio-button);
+  color: #333333;
+
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  box-shadow: none;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.audio-play-button:hover {
+  transform: translateY(-2px);
+  background: var(--color-audio-button-dark);
+}
+
+.audio-play-button.is-playing {
+  background: var(--color-title);
+  color: var(--color-white);
+}
+
+.audio-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.audio-text {
+  line-height: 1;
+}
+
+/* Wedding intro */
+.wedding-intro-section {
+  position: relative;
+  padding: 72px 18px 82px;
+
+  background-color: var(--color-background);
+  background-image: url("../img/wedding-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+.wedding-intro-content {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wedding-intro-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.wedding-intro-image-top {
+  max-width: 860px;
+  margin-bottom: 34px;
+}
+
+.wedding-intro-image-bottom {
+  max-width: 880px;
+}
+
+/* Event date */
+.event-date-section {
+  position: relative;
+  padding: 82px 20px 76px;
+
+  background-color: #c43b63;
+  background-image: url("../img/event-date-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+.event-date-content {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.event-date-image {
+  display: block;
+  width: min(94%, 820px);
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Gallery */
+.gallery-section {
+  position: relative;
+  padding: 44px 0 62px;
+
+  background-color: #f7e8e8;
+  background-image: url("../img/fondo-galeria.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+.gallery-content {
+  width: min(100%, 980px);
+  margin: 0 auto;
+}
+
+.gallery-slider {
+  width: min(86%, 680px);
+  margin: 0 auto;
+
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: 0 16px 38px rgba(47, 42, 38, 0.16);
+}
+
+.gallery-track {
+  display: flex;
+  transition: transform 0.55s ease;
+}
+
+.gallery-slide {
+  min-width: 100%;
+}
+
+.gallery-slide img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.gallery-dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+
+  width: min(86%, 420px);
+  margin: 24px auto 0;
+}
+
+.gallery-dot {
+  width: 9px;
+  height: 9px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(47, 42, 38, 0.22);
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.gallery-dot.is-active {
+  background: #1d6f90;
+  transform: scale(1.16);
+}
+
+/* Sections */
+.section {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: 82px 24px;
+  text-align: center;
+}
+
+.section h2 {
+  font-family: var(--font-title);
+  font-size: clamp(2.8rem, 10vw, 5rem);
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 22px;
+}
+
+.section p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--color-muted);
+  font-size: 0.98rem;
+}
+
+/* Countdown */
+.countdown-section {
+  background: var(--color-background);
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+
+  max-width: 520px;
+  margin: 34px auto 0;
+}
+
+.countdown-item {
+  background: var(--color-background-soft);
+  border-radius: var(--radius-medium);
+  padding: 22px 12px;
+
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(176, 138, 99, 0.14);
+}
+
+.countdown-item span {
+  display: block;
+
+  font-family: var(--font-title);
+  font-size: 3rem;
+  line-height: 1;
+
+  color: var(--color-accent-dark);
+}
+
+.countdown-item small {
+  display: block;
+  margin-top: 8px;
+
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: var(--color-muted);
+}
+
+/* Full image sections */
+.image-section-content {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.full-section-image {
+  display: block;
+  width: min(94%, 820px);
+  height: auto;
+  margin: 0 auto;
+}
+
+.dress-code-section,
+.ceremony-section,
+.reception-section,
+.program-section,
+.gifts-section,
+.attendance-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.dress-code-section {
+  padding: 76px 20px 82px;
+
+  background-color: #f4e2d6;
+  background-image: url("../img/dresscode-fondo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dress-code-image {
+  width: min(94%, 820px);
+}
+
+.ceremony-section,
+.reception-section {
+  padding: 78px 20px 86px;
+
+  background-color: #f7eadc;
+  background-image: url("../img/boda-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.location-image {
+  width: min(94%, 820px);
+  margin-bottom: 24px;
+}
+
+.location-button,
+.attendance-button,
+.gift-list-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+  padding: 12px 28px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--color-title);
+
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  box-shadow: 0 14px 30px rgba(47, 42, 38, 0.14);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.location-button:hover,
+.attendance-button:hover,
+.gift-list-button:hover {
+  transform: translateY(-2px);
+  background: var(--color-title);
+  color: var(--color-white);
+}
+
+.program-section {
+  padding: 78px 20px 86px;
+
+  background-color: #f8e8d8;
+  background-image: url("../img/programa-fondo.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.program-image {
+  width: min(94%, 820px);
+}
+
+.gifts-section {
+  padding: 78px 20px 88px;
+
+  background-color: #f7e4dc;
+  background-image: url("../img/regalos-fondo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.gifts-title-image {
+  width: min(94%, 820px);
+  margin-bottom: 18px;
+}
+
+.gift-list-button {
+  margin-bottom: 32px;
+}
+
+.bank-card {
+  width: min(88%, 560px);
+  margin: 0 auto;
+  padding: 8px 0 0;
+
+  background: transparent;
+  border: none;
+  border-radius: 0;
+
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.bank-title-image {
+  display: block;
+  width: min(96%, 460px);
+  height: auto;
+  margin: 0 auto 18px;
+}
+
+.bank-data {
+  width: min(92%, 520px);
+  margin: 0 auto;
+}
+
+.bank-label {
+  margin: 16px 0 8px;
+
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: var(--color-title);
+}
+
+.copy-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding: 12px 12px 12px 16px;
+
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  border: 1px solid rgba(75, 68, 40, 0.12);
+}
+
+.copy-row span {
+  color: var(--color-text);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  user-select: text;
+}
+
+.copy-button {
+  flex: 0 0 auto;
+
+  min-height: 34px;
+  padding: 8px 14px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: var(--color-title);
+  color: var(--color-white);
+
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.attendance-section {
+  padding: 78px 20px 88px;
+
+  background-color: #f8e8d8;
+  background-image: url("../img/asistencia-fondo.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.attendance-image {
+  width: min(94%, 820px);
+  margin-bottom: 24px;
+}
+
+/* Footer */
+.footer-section {
+  padding: 54px 22px 48px;
+
+  background-color: #4b4428;
+  background-image: url("../img/footer-fondo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: var(--color-white);
+  text-align: center;
+}
+
+.footer-content {
+  width: min(100%, 760px);
+  margin: 0 auto;
+}
+
+.footer-content p {
+  font-size: 0.78rem;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.footer-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  margin-top: 22px;
+}
+
+.footer-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+  padding: 10px 22px;
+
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+
+  color: var(--color-white);
+
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.footer-button:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* Music button */
+.music-button {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 50;
+
+  width: 54px;
+  height: 54px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: var(--color-accent);
+  color: var(--color-white);
+
+  font-size: 1.3rem;
+  cursor: pointer;
+
+  box-shadow: 0 14px 30px rgba(47, 42, 38, 0.22);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.music-button:hover {
+  transform: scale(1.06);
+  background: var(--color-accent-dark);
+}
+
+.music-button.is-playing {
+  background: var(--color-accent-dark);
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media (min-width: 700px) {
+  .section {
+    padding: 105px 32px;
+  }
+
+  .countdown {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1000px) {
+  .section p {
+    font-size: 1.04rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero {
+    padding: 24px 18px;
+
+    background-size: 100% 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+
+  .hero-frame {
+    inset: 14px;
+    border-radius: 24px;
+  }
+
+  .hero-title-image {
+    width: 92vw;
+    margin-bottom: 22px;
+  }
+
+  .hero-date {
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+  }
+
+  .intro-quote {
+    padding-top: 64px;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .quote-image {
+    width: 92%;
+    margin: 0 auto 0;
+  }
+
+  .flowers-divider {
+    width: 150%;
+    max-width: none;
+    margin-left: -25%;
+    margin-top: -8px;
+  }
+
+  .audio-player {
+    padding: 24px 20px 36px;
+  }
+
+  .audio-kicker {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+  }
+
+  .audio-play-button {
+    min-height: 44px;
+    padding: 12px 22px;
+  }
+
+  .wedding-intro-section {
+    padding: 54px 14px 64px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .wedding-intro-image-top {
+    width: 112%;
+    max-width: none;
+    margin-left: -6%;
+    margin-bottom: 24px;
+  }
+
+  .wedding-intro-image-bottom {
+    width: 112%;
+    max-width: none;
+    margin-left: -6%;
+  }
+
+  .event-date-section {
+    padding: 56px 14px 52px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .event-date-image {
+    width: 98%;
+  }
+
+  .gallery-section {
+    padding: 34px 0 50px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .gallery-slider {
+    width: 86%;
+  }
+
+  .gallery-slide img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .gallery-dots {
+    width: min(86%, 310px);
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .gallery-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .section {
+    padding: 76px 22px;
+  }
+
+  .section h2 {
+    font-size: clamp(2.6rem, 12vw, 4.2rem);
+  }
+
+  .dress-code-section,
+  .ceremony-section,
+  .reception-section,
+  .program-section,
+  .gifts-section,
+  .attendance-section {
+    padding: 58px 14px 66px;
+  }
+
+  .program-section,
+  .attendance-section {
+    background-position: center top;
+  }
+
+  .full-section-image {
+    width: 100%;
+  }
+
+  .location-image,
+  .attendance-image {
+    margin-bottom: 20px;
+  }
+
+  .location-button,
+  .attendance-button,
+  .gift-list-button {
+    min-height: 44px;
+    padding: 12px 22px;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    max-width: 92%;
+    text-align: center;
+  }
+
+  .gift-list-button {
+    margin-bottom: 28px;
+  }
+
+  .bank-card {
+    width: 100%;
+    padding: 0;
+  }
+
+  .bank-title-image {
+    width: 100%;
+    margin-bottom: 14px;
+  }
+
+  .bank-data {
+    width: 94%;
+  }
+
+  .copy-row {
+    gap: 8px;
+    padding: 10px 10px 10px 14px;
+  }
+
+  .copy-row span {
+    font-size: 0.76rem;
+  }
+
+  .copy-button {
+    padding: 8px 12px;
+    font-size: 0.64rem;
+  }
+
+  .footer-section {
+    padding: 44px 18px 42px;
+  }
+
+  .footer-content p {
+    font-size: 0.72rem;
+  }
+}
